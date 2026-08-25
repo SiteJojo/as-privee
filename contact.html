@@ -48,7 +48,7 @@
         (instructions détaillées dans le fichier README du site).
       </p>
 
-      <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+      <form id="contact-form" action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
         <div class="form-field">
           <label for="name">Votre nom</label>
           <input type="text" id="name" name="name" required>
@@ -95,6 +95,17 @@
         <div class="form-field checkbox-field">
           <input type="checkbox" id="consent" name="consent" required>
           <label for="consent" style="font-weight:normal;">J'accepte que ces informations soient utilisées uniquement pour me répondre. Voir la <a href="mentions-legales.html">politique de confidentialité</a>.</label>
+        </div>
+
+        <div class="form-field">
+          <label for="captcha-answer">Vérification anti-robot : combien font <strong><span id="captcha-a">4</span> + <span id="captcha-b">7</span></strong> ?</label>
+          <input type="text" inputmode="numeric" autocomplete="off" id="captcha-answer" name="captcha_answer" required>
+          <p class="form-error" id="captcha-error" hidden>Réponse incorrecte, merci de réessayer.</p>
+        </div>
+
+        <div class="hp-field" aria-hidden="true">
+          <label for="hp-website">Laissez ce champ vide</label>
+          <input type="text" id="hp-website" name="_gotcha" tabindex="-1" autocomplete="off">
         </div>
 
         <button type="submit" class="btn btn-primary">Envoyer le message</button>
